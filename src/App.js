@@ -37,7 +37,7 @@ export class App extends Component {
         </Container>
         <div className="container">
           <div className="flex justify-content-center align-items-center p-6 flex-wrap bg-slate-200">
-            <div className="flex justify-content-center align-items-center bg-white hover:border-dashed hover:border-2 hover:border-slate-900 rounded-1 flex-wrap m-3">
+            <div className="flex justify-content-center align-items-center bg-white hover:border-dashed hover:border hover:border-slate-400 rounded-1 flex-wrap m-3">
               <div
                 className="flex justify-content-center align-items-center"
                 onChange={this.countryFlagHandler}
@@ -46,7 +46,7 @@ export class App extends Component {
                   src={this.state.flagImg}
                   alt="country-flag"
                   id="img"
-                  className="rounded-3 w-20 mx-3"
+                  className="rounded-3 w-16 mx-3"
                 />
 
                 <select
@@ -786,15 +786,19 @@ export class App extends Component {
                   </option>
                 </select>
               </div>
+              <span className="result">
+                {" +"}
+                {this.state.countryCodeValue}
+              </span>
               <input
                 type="tel"
                 placeholder="945-678-0391"
                 id="mob"
-                className="m-3 p-3 outline-0 rounded-3 focus:bg-slate-100 focus:text-slate-900"
+                className="m-3 p-3 outline-0 rounded-3 focus:bg-slate-200 bg-slate-100 focus:text-slate-900"
                 onChange={this.phoneHandler}
                 defaultValue={this.state.phone}
                 style={{
-                  border: "1px solid black",
+                  border: "0px solid black",
                 }}
                 onInput={this.dashedNumber}
                 maxLength={12}
