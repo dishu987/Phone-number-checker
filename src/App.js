@@ -20,15 +20,10 @@ export class App extends Component {
     });
   };
   dashedNumber = (e) => {
-    if (e.target.value.length > 12) {
-      alert("A valid mobile number have only 10 digits");
-      e.target.value -= e.target.value[e.target.value.length - 1];
-    } else {
-      e.target.value = e.target.value.replace(
-        /^(\d{3})(\d{3})(\d{4})/,
-        "$1-$2-$3"
-      );
-    }
+    e.target.value = e.target.value.replace(
+      /^(\d{3})(\d{3})(\d{4})/,
+      "$1-$2-$3"
+    );
   };
   render() {
     return (
@@ -802,6 +797,7 @@ export class App extends Component {
                   border: "1px solid black",
                 }}
                 onInput={this.dashedNumber}
+                maxLength={12}
               />
             </div>
             <div className="flex w-100 justify-content-center align-items-center m-6 p-6 font-monospace h4 text-slate-700">
